@@ -11,7 +11,8 @@ class TopNav extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            date: new Date()
+            date: new Date(),
+            
 
         }
     }
@@ -34,7 +35,7 @@ class TopNav extends React.Component{
         return (
             <div className="topNav">
                 <Link to='/'><div className="home"><i className="demo-icon icon-home"></i></div></Link>
-                <div className="time">{this.state.date.toLocaleTimeString()}</div>
+                <div className="time">{this.state.date.toLocaleTimeString()}</  div>
             </div>
         )
     }

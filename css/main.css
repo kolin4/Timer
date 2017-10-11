@@ -262,3 +262,47 @@ h2 {
     color: white;
     font-weight: bold;
 }
+
+
+
+.clock {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    border: 17px solid white;
+    position: relative;
+    transform: translateY(-3px);
+}
+.hour{
+    height: 6px;
+    width: 30%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0%;
+    /*transform:     rotate(-90deg);*/
+
+}
+.minutes{
+    height: 6px;
+    width: 40%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0%;
+    /*transform:     rotate(-90deg);*/
+
+}
+.seconds{
+    height: 3px;
+    width: 45%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0%;
+    /*transform:     rotate(-90deg);*/
+
+}

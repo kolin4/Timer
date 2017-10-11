@@ -240,7 +240,7 @@ start = () => {
 
         if (( aClock == a ) && ( bClock == b) && ( cClock == c) && ( dClock == d)){
             console.log('ALARM');
-            let endSound = new Audio('../sounds/bell.mp3');
+            let endSound = new Audio('./sounds/bell.mp3');
             endSound.play();
             this.setState({
                 display:'none'

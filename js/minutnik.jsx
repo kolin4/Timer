@@ -267,7 +267,7 @@ clearInterval(this.interval);
                 opacityR3:0.3,
                 opacityR4:0.3,
             })
-            let endSound = new Audio('../sounds/bell.mp3');
+            let endSound = new Audio('./sounds/bell.mp3');
             endSound.play();
         } else {
 
