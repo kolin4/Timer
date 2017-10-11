@@ -27725,19 +27725,73 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var MainData = function (_React$Component) {
     _inherits(MainData, _React$Component);
 
-    function MainData() {
+    function MainData(props) {
         _classCallCheck(this, MainData);
 
-        return _possibleConstructorReturn(this, (MainData.__proto__ || Object.getPrototypeOf(MainData)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (MainData.__proto__ || Object.getPrototypeOf(MainData)).call(this, props));
+
+        _this.state = {
+            date: new Date()
+
+        };
+        return _this;
     }
 
     _createClass(MainData, [{
-        key: "render",
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            var date = this.state.date;
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds() + 1;
+            console.log(this.state.date);
+            var lineSeconds = document.querySelector('.seconds');
+            var lineMinutes = document.querySelector('.minutes');
+            var lineHours = document.querySelector('.hour');
+            lineSeconds.style.transform = 'rotate(' + (seconds / 60 * 360 - 90) + 'deg)';
+            lineMinutes.style.transform = 'rotate(' + (minutes / 60 * 360 - 90) + 'deg)';
+            lineHours.style.transform = 'rotate(' + (hours / 12 * 360 - 90) + 'deg)';
+            this.setState({
+                date: new Date()
+            });
+
+            this.interval = setInterval(function () {
+                var date = _this2.state.date;
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+                var seconds = date.getSeconds() + 1;
+                console.log(_this2.state.date);
+                var lineSeconds = document.querySelector('.seconds');
+                var lineMinutes = document.querySelector('.minutes');
+                var lineHours = document.querySelector('.hour');
+                lineSeconds.style.transform = 'rotate(' + (seconds / 60 * 360 - 90) + 'deg)';
+                lineMinutes.style.transform = 'rotate(' + (minutes / 60 * 360 - 90) + 'deg)';
+                lineHours.style.transform = 'rotate(' + (hours / 12 * 360 - 90) + 'deg)';
+                _this2.setState({
+                    date: new Date()
+                });
+            }, 1000);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            clearInterval(this.interval);
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                { className: "main" },
-                _react2.default.createElement("div", { className: "image" })
+                'div',
+                { className: 'main' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'clock' },
+                    _react2.default.createElement('div', { className: 'hour' }),
+                    _react2.default.createElement('div', { className: 'minutes' }),
+                    _react2.default.createElement('div', { className: 'seconds' })
+                )
             );
         }
     }]);
@@ -28239,7 +28293,7 @@ var Minutnik = function (_React$Component) {
                         opacityR3: 0.3,
                         opacityR4: 0.3
                     });
-                    var endSound = new Audio('../sounds/bell.mp3');
+                    var endSound = new Audio('./sounds/bell.mp3');
                     endSound.play();
                 } else {
 
@@ -28792,7 +28846,7 @@ var Budzik = function (_React$Component) {
 
                 if (aClock == a && bClock == b && cClock == c && dClock == d) {
                     console.log('ALARM');
-                    var endSound = new Audio('../sounds/bell.mp3');
+                    var endSound = new Audio('./sounds/bell.mp3');
                     endSound.play();
                     _this.setState({
                         display: 'none'
