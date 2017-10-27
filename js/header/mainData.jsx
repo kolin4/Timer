@@ -17,7 +17,6 @@ class MainData extends React.Component{
         let hours = date.getHours();
         let minutes = date.getMinutes();
         let seconds = date.getSeconds() +1;
-        console.log(this.state.date);
         let lineSeconds = document.querySelector('.seconds');
         let lineMinutes = document.querySelector('.minutes');
         let lineHours = document.querySelector('.hour');
@@ -33,7 +32,6 @@ class MainData extends React.Component{
             let hours = date.getHours();
             let minutes = date.getMinutes();
             let seconds = date.getSeconds() +1;
-            console.log(this.state.date);
             let lineSeconds = document.querySelector('.seconds');
             let lineMinutes = document.querySelector('.minutes');
             let lineHours = document.querySelector('.hour');

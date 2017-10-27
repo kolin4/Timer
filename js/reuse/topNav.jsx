@@ -11,12 +11,19 @@ class TopNav extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            date: new Date(),
-            
+            date: 0
+
 
         }
     }
+    componentWillMount(){
+        this.setState({
+            date:new Date()
+        })
+    }
     componentDidMount() {
+
+        
         this.myInterval = setInterval(()=>{
 
             this.setState({
